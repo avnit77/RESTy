@@ -1,0 +1,7 @@
+Footer {
+    background-color: navy;
+    height: 300px;
+    p {
+        color: white;
+    }
+}
