@@ -1,8 +1,9 @@
 Header {
     background-color: navy;
-    height: 300px;
+    height: 100px;
     p {
         color: white;
+        font-size: larger;
     }
 }
 

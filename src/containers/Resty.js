@@ -1,60 +1,53 @@
 import React, { Component } from 'react';
-import Header from '../components/Common/Header';
-import Footer from '../components/Common/Footer';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+import Form from '../components/resty/Input';
+// import Result from '../components/resty/Result';
 
 export default class Resty extends Component{
-//   state = {
-//     showResult: false,
-//     words: [],
-//     one: '',
-//     two: '',
-//     three: '',
-//     four: '',
-//     five: '',
-//     six: '',
-//     seven: '',
-//     eight: '',
-//     nine: '',
-//     ten: '',
-//     eleven: '',
-//     twelve: '',
-//     thirteen: ''
-//   }
+  state = {
+    url: '',
+    textInput: '',
+    method: '',
+    response: '',
+  }
 
-  //   toggleResult = () =>
-  //     this.setState(state => ({ ...state, showResult: !state.showResult }));
+  handleChange = ({ target }) => {
+    if(target.type === 'text') {
+      this.setState({ [target.name]: target.value });
+    } else if(target.type === 'radio') {
+      this.setState({ [target.name]: target.value });
+    } else if(target.type === 'textarea') {
+      this.setState({ textInput: target.value });
+    }
+  };
 
-  //     handleChange = event => {
-  //       this.setState({ one: event.target.value });
-  //       this.setState({ two: event.target.value });
-  //       this.setState({ three: event.target.value });
-  //       this.setState({ four: event.target.value });
-  //       this.setState({ five: event.target.value });
-  //       this.setState({ six: event.target.value });
-  //       this.setState({ seven: event.target.value });
-  //       this.setState({ eight: event.target.value });
-  //       this.setState({ nine: event.target.value });
-  //       this.setState({ ten: event.target.value });
-  //       this.setState({ eleven: event.target.value });
-  //       this.setState({ twelve: event.target.value });
-  //       this.setState({ thirteen: event.target.value });
-  //     }
+  handleSubmit = event => {
+    event.preventDefault();
+    let body;
 
-  //     handleSubmit = event => {
-  //       event.preventDefault();
-  //       this.toggleResult();
-  //       this.setState(state => ({
-  //         words: [state.one, state.two, state.three, state.four, state.five, state.six, state.seven, state.eight, state.nine, state.ten, state.eleven, state.twelve, state.thirteen]
-  //       }));
-  //     }
+    if(this.state.method === 'POST' || this.state.method === 'PUT' || this.state.method === 'PATCH') {
+      body = this.state.textInput;
+    }
+    console.log(body, 'BODY');
+
+  }
 
   render() {
-    //   const { showResult } = this.state;
+    const { url, textInput, method } = this.state;
     return (
       <>
         <Header />
-        {/* {!showResult && <Form onSubmit={this.handleSubmit} onChange={this.handleChange} />}
-          {showResult && <Result words={this.state.words} closeResult={this.toggleResult} />} */}
+        <section>
+          <Form
+            url={url}
+            textInput={textInput}
+            method={method}
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+          />
+          <pre>{this.state.response}</pre>
+        </section>
         <Footer />
       </>
     );
