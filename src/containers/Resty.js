@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
-import Form from '../components/resty/Input';
+import Form from '../components/resty/Form';
 // import Result from '../components/resty/Result';
 
 export default class Resty extends Component{
@@ -10,6 +10,9 @@ export default class Resty extends Component{
     textInput: '',
     method: '',
     response: '',
+    token: '',
+    username: '',
+    password: ''
   }
 
   handleChange = ({ target }) => {
@@ -34,7 +37,7 @@ export default class Resty extends Component{
   }
 
   render() {
-    const { url, textInput, method } = this.state;
+    const { url, textInput, method, username, password, token } = this.state;
     return (
       <>
         <Header />
@@ -45,6 +48,9 @@ export default class Resty extends Component{
             method={method}
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
+            username={username}
+            password={password}
+            token={token}
           />
           <pre>{this.state.response}</pre>
         </section>
