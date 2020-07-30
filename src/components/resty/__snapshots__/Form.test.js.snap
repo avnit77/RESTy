@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component renders Form 1`] = `
+<form>
+  <input
+    name="url"
+    placeholder="URL"
+    type="text"
+    value=""
+  />
+  <section>
+    <label
+      htmlFor=""
+    >
+      <input
+        checked={false}
+        id=""
+        name="method"
+        type="radio"
+        value="GET"
+      />
+      <span>
+        GET
+      </span>
+    </label>
+    <label>
+      <input
+        checked={false}
+        name="method"
+        type="radio"
+        value="POST"
+      />
+      <span>
+        POST
+      </span>
+    </label>
+    <label>
+      <input
+        checked={false}
+        name="method"
+        type="radio"
+        value="PATCH"
+      />
+      <span>
+        PATCH
+      </span>
+    </label>
+    <label>
+      <input
+        checked={false}
+        name="method"
+        type="radio"
+        value="PUT"
+      />
+      <span>
+        PUT
+      </span>
+    </label>
+    <label>
+      <input
+        checked={false}
+        name="method"
+        type="radio"
+        value="DELETE"
+      />
+      <span>
+        DELETE
+      </span>
+    </label>
+    <button
+      type="submit"
+    >
+      GO
+    </button>
+    <button
+      type="reset"
+    >
+      Clear All
+    </button>
+  </section>
+  <section>
+    <textarea
+      disabled={false}
+      name="textInput"
+      placeholder="Raw JSON Body"
+    />
+  </section>
+  <div>
+    <p>
+      Basic Authorization
+    </p>
+    <input
+      className="username"
+      name="username"
+      placeholder="Username"
+      type="text"
+      value=""
+    />
+    <input
+      className="password"
+      name="password"
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <p>
+      Bearer Token
+    </p>
+    <input
+      className="text"
+      name="token"
+      placeholder="Bearer Token"
+      type="text"
+      value=""
+    />
+  </div>
+</form>
+`;
